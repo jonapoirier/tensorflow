@@ -34,16 +34,26 @@
         android:icon="@drawable/ic_launcher"
         android:theme="@style/MaterialTheme">
 
-        <activity android:name="org.tensorflow.demo.ClassifierActivity"
-                  android:screenOrientation="portrait"
-                  android:label="@string/activity_name_classification">
+        <activity android:name="org.tensorflow.demo.MainActivity"
+            android:screenOrientation="portrait"
+            android:label="@string/activity_name_classification"
+            android:theme="@style/Theme.AppCompat.Light">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name="org.tensorflow.demo.ClassifierActivity"
+                  android:screenOrientation="portrait"
+                  android:label="@string/activity_name_classification">
+        </activity>
+        <activity
+            android:name="org.tensorflow.demo.ItemsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light">
+        </activity>
 
-        <activity android:name="org.tensorflow.demo.DetectorActivity"
+        <!--activity android:name="org.tensorflow.demo.DetectorActivity"
                   android:screenOrientation="portrait"
                   android:label="@string/activity_name_detection">
             <intent-filter>
@@ -68,7 +78,7 @@
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
+        </activity!-->
     </application>
 
 </manifest>

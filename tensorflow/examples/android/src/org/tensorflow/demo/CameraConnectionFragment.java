@@ -24,8 +24,10 @@ import android.app.Fragment;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.res.Configuration;
+import android.graphics.Color;
 import android.graphics.ImageFormat;
 import android.graphics.Matrix;
+import android.graphics.PorterDuff;
 import android.graphics.RectF;
 import android.graphics.SurfaceTexture;
 import android.hardware.camera2.CameraAccessException;
@@ -50,6 +52,7 @@ import android.view.Surface;
 import android.view.TextureView;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -75,6 +78,10 @@ public class CameraConnectionFragment extends Fragment {
    */
   private static final SparseIntArray ORIENTATIONS = new SparseIntArray();
   private static final String FRAGMENT_DIALOG = "dialog";
+  /**
+   * The {@link ProgressBar} to indicate processing scan.
+   */
+  private ProgressBar progressBar;
 
   static {
     ORIENTATIONS.append(Surface.ROTATION_0, 90);
@@ -238,6 +245,7 @@ public class CameraConnectionFragment extends Fragment {
     this.inputSize = inputSize;
   }
 
+
   /**
    * Shows a {@link Toast} on the UI thread.
    *
@@ -323,6 +331,12 @@ public class CameraConnectionFragment extends Fragment {
   @Override
   public void onViewCreated(final View view, final Bundle savedInstanceState) {
     textureView = (AutoFitTextureView) view.findViewById(R.id.texture);
+
+    progressBar = (ProgressBar) view.findViewById(R.id.progressBar);
+    progressBar.setProgress(0);
+    progressBar.setMax(100);
+    progressBar.getIndeterminateDrawable().setColorFilter(Color.BLUE, PorterDuff.Mode.MULTIPLY);
+    progressBar.setScaleY(2f);
   }
 
   @Override

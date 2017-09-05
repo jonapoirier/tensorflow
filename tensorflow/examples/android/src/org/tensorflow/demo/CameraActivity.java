@@ -39,6 +39,7 @@ import android.os.Trace;
 import android.util.Size;
 import android.view.KeyEvent;
 import android.view.WindowManager;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 import java.nio.ByteBuffer;
 
@@ -329,6 +330,7 @@ public abstract class CameraActivity extends Activity implements OnImageAvailabl
               getDesiredPreviewFrameSize());
 
       camera2Fragment.setCamera(cameraId);
+
       fragment = camera2Fragment;
     } else {
       fragment = new LegacyCameraConnectionFragment(this, getLayoutId());

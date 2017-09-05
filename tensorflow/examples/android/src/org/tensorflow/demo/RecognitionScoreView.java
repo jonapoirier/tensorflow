@@ -23,15 +23,20 @@ import android.util.TypedValue;
 import android.view.View;
 
 import org.tensorflow.demo.Classifier.Recognition;
+import org.tensorflow.demo.env.Logger;
 
 import java.util.List;
 
 public class RecognitionScoreView extends View implements ResultsView {
+
+  private static final Logger LOGGER = new Logger();
+
   private static final float TEXT_SIZE_DIP = 24;
   private List<Recognition> results;
   private final float textSizePx;
   private final Paint fgPaint;
   private final Paint bgPaint;
+  private final Paint rectPaint;
 
   public RecognitionScoreView(final Context context, final AttributeSet set) {
     super(context, set);
@@ -44,6 +49,11 @@ public class RecognitionScoreView extends View implements ResultsView {
 
     bgPaint = new Paint();
     bgPaint.setColor(0xcc4285f4);
+
+    rectPaint = new Paint();
+    rectPaint.setColor(0xcc4285f4);
+    rectPaint.setStyle(Paint.Style.STROKE);
+    rectPaint.setStrokeWidth(3);
   }
 
   @Override
@@ -58,6 +68,25 @@ public class RecognitionScoreView extends View implements ResultsView {
     int y = (int) (fgPaint.getTextSize() * 1.5f);
 
     canvas.drawPaint(bgPaint);
+
+    // We set the size of the rect (90% area)
+    LOGGER.i("heightPixels : " + getResources().getDisplayMetrics().heightPixels);
+    LOGGER.i("widthPixels : " + getResources().getDisplayMetrics().widthPixels);
+
+    int heightPixels = getResources().getDisplayMetrics().heightPixels;
+    int widthPixels = getResources().getDisplayMetrics().widthPixels;
+
+    int top = Double.valueOf(heightPixels * 0.05).intValue();
+    int bottom = heightPixels - Double.valueOf(heightPixels * 0.05).intValue();
+    int left = Double.valueOf(widthPixels * 0.05).intValue();
+    int right = widthPixels - Double.valueOf(widthPixels * 0.05).intValue();
+
+    LOGGER.i("top : " + top);
+    LOGGER.i("bottom : " + bottom);
+    LOGGER.i("left : " + left);
+    LOGGER.i("right : " + right);
+
+    canvas.drawRect(left, top, right, bottom, rectPaint);
 
     if (results != null) {
       for (final Recognition recog : results) {

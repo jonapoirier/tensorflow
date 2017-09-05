@@ -1,0 +1,34 @@
+[
+  {
+    "name": "couleur principale",
+    "englishName" : "color",
+    "sex": "f",
+    "operator": "=",
+    "type":"string",
+    "prefereOpenQuestion": true
+  },
+  {
+    "name": "taille",
+    "englishName" : "height",
+    "sex": "f",
+    "operator": "<=",
+    "type":"numerical",
+    "prefereOpenQuestion": false
+  },
+  {
+    "name": "poids",
+    "englishName" : "weight",
+    "sex": "m",
+    "operator": "<=",
+    "type":"numerical",
+    "prefereOpenQuestion": false
+  },
+  {
+    "name": "materiau principal",
+    "englishName" : "material",
+    "sex": "m",
+    "operator": "=",
+    "type":"string",
+    "prefereOpenQuestion": true
+  }
+]

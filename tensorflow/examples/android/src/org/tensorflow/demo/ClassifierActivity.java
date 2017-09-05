@@ -16,19 +16,26 @@
 
 package org.tensorflow.demo;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Bitmap.Config;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.Matrix;
 import android.graphics.Paint;
+import android.graphics.PorterDuff;
 import android.graphics.Typeface;
 
 import android.media.ImageReader.OnImageAvailableListener;
+import android.os.Bundle;
 import android.os.SystemClock;
 import android.util.Size;
 import android.util.TypedValue;
 import android.view.Display;
+import android.view.WindowManager;
+import android.widget.ProgressBar;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Vector;
 import org.tensorflow.demo.OverlayView.DrawCallback;
@@ -57,32 +64,53 @@ public class ClassifierActivity extends CameraActivity implements OnImageAvailab
   // --output_graph=<your-stripped-pb-file> \
   // --input_node_names="Mul" \
   // --output_node_names="final_result" \
-  // --input_binary=true
-  private static final int INPUT_SIZE = 224;
+  // --input_binary=
+
+  /*private static final int INPUT_SIZE = 224;
   private static final int IMAGE_MEAN = 117;
   private static final float IMAGE_STD = 1;
   private static final String INPUT_NAME = "input";
-  private static final String OUTPUT_NAME = "output";
+  private static final String OUTPUT_NAME = "output";*/
+
+  private static final int INPUT_SIZE = 299;
+  private static final int IMAGE_MEAN = 128;
+  private static final float IMAGE_STD = 128;
+  private static final String INPUT_NAME = "Mul";
+  private static final String OUTPUT_NAME = "final_result";
 
 
-  private static final String MODEL_FILE = "file:///android_asset/tensorflow_inception_graph.pb";
+  /*private static final String MODEL_FILE = "file:///android_asset/tensorflow_inception_graph.pb";
   private static final String LABEL_FILE =
-      "file:///android_asset/imagenet_comp_graph_label_strings.txt";
+      "file:///android_asset/imagenet_comp_graph_label_strings.txt";*/
+
+  private static final String MODEL_FILE = "file:///android_asset/optimized_graph.pb";
+  private static final String LABEL_FILE =
+          "file:///android_asset/retrained_labels.txt";
 
 
   private static final boolean MAINTAIN_ASPECT = true;
 
   private static final Size DESIRED_PREVIEW_SIZE = new Size(640, 480);
 
-
   private Integer sensorOrientation;
   private Classifier classifier;
   private Matrix frameToCropTransform;
   private Matrix cropToFrameTransform;
 
+  private boolean computingStartActivity = false;
+
+  private List<ItemClassifier> allresults = new ArrayList<>();
 
   private BorderedText borderedText;
 
+  ProgressBar progressBar = null;
+
+  @Override
+  protected void onCreate(final Bundle savedInstanceState) {
+
+    super.onCreate(savedInstanceState);
+
+  }
 
   @Override
   protected int getLayoutId() {
@@ -165,10 +193,49 @@ public class ClassifierActivity extends CameraActivity implements OnImageAvailab
             lastProcessingTimeMs = SystemClock.uptimeMillis() - startTime;
             LOGGER.i("Detect: %s", results);
             cropCopyBitmap = Bitmap.createBitmap(croppedBitmap);
-            if (resultsView==null) {
+
+
+
+            if (results != null && !results.isEmpty()) {
+
+              if( progressBar == null) {
+                progressBar = (ProgressBar) findViewById(R.id.progressBar);
+              }
+              LOGGER.i("progress ClassifierActivity : " + progressBar);
+
+              if(progressBar.getProgress() < 100) {
+
+                progressBar.incrementProgressBy(5);
+
+                for (final Classifier.Recognition result : results) {
+                  // TODO JPR placer caractéristiques
+                  allresults.add(new ItemClassifier(result.getId(), result.getTitle(), result.getConfidence(), null));
+                }
+
+              } else if (!computingStartActivity){
+
+
+
+                computingStartActivity = true;
+                progressBar.setProgress(0);
+
+                LOGGER.i("Opening One Item Activity");
+                LOGGER.i("Results : " + allresults.toString());
+                Intent intentOneItem = new Intent(progressBar.getContext(), ItemsActivity.class);
+                intentOneItem.putExtra("results", (ArrayList<ItemClassifier>) allresults);
+                progressBar.getContext().startActivity(intentOneItem);
+
+                // allresults.clear();
+                computingStartActivity = false;
+              }
+            }
+
+
+            /*if (resultsView==null) {
               resultsView = (ResultsView) findViewById(R.id.results);
             }
-            resultsView.setResults(results);
+            resultsView.setResults(results);*/
+
             requestRender();
             computing = false;
             if (postInferenceCallback != null) {
