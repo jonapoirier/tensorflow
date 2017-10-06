@@ -1,5 +1,6 @@
 package org.tensorflow.demo.inferenceMotor.model;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
@@ -9,7 +10,7 @@ import java.util.List;
  *
  */
 
-public class Material {
+public class Material implements Serializable {
 
     /**
      * ARTNG ?
@@ -37,6 +38,16 @@ public class Material {
     private String picture;
 
     /**
+     * Description of the object
+     */
+    private String description;
+
+    /**
+     * Article code
+     */
+    private String code;
+
+    /**
      * charateristics of object
      */
     private List<MaterialCharacteristic> characteristics;
@@ -45,7 +56,10 @@ public class Material {
         super();
     }
 
-    public Material(String id, String type, int index, String title, String picture, List<MaterialCharacteristic> characteristics) {
+    public Material(String id, String type, int index, String title,
+                    String picture, List<MaterialCharacteristic> characteristics,
+                    String description,
+                    String code) {
         super();
         this.id = id;
         this.type = type;
@@ -53,6 +67,8 @@ public class Material {
         this.title = title;
         this.picture = picture;
         this.characteristics = characteristics;
+        this.description = description;
+        this.code = code;
     }
 
     public String getId() {
@@ -103,9 +119,17 @@ public class Material {
         this.characteristics = characteristics;
     }
 
+    public String getDescription() { return description; }
+
+    public void setDescription(String description) { this.description = description; }
+
+    public String getCode() { return this.code; }
+
+    public void setCode(String code) { this.code = code; }
+
     @Override
     public String toString() {
-        return "Material [id=" + id + ", type=" + type + ", index=" + index + ", title=" + title + ", picture=" + picture + ", charateristics="
+        return "Material [id=" + id + ", type=" + type + ", code=" + code + ", description=" + description + ", index=" + index + ", title=" + title + ", picture=" + picture + ", charateristics="
                 + characteristics + "]";
     }
 

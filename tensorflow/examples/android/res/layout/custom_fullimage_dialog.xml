@@ -1,14 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/layout_root" android:orientation="horizontal"
-    android:layout_width="fill_parent" android:layout_height="fill_parent"
+    android:id="@+id/layout_root"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     android:padding="10dp">
-    <ImageView android:id="@+id/fullimage" android:layout_width="fill_parent"
-        android:layout_height="fill_parent">
+
+    <TextView
+        android:id="@+id/titleDialogView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="30sp"
+        android:gravity="center"/>
+
+    <ImageView android:id="@+id/fullimage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="fitXY"
+        android:adjustViewBounds="true">
     </ImageView>
 
-    <TextView android:id="@+id/custom_fullimage_placename"
-        android:layout_width="wrap_content" android:layout_height="fill_parent"
-        android:textColor="#FFF">
-    </TextView>
+    <TextView
+        android:id="@+id/descriptionDialogView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="30sp"
+        android:gravity="center" />
+
+    <!--TextView android:id="@+id/custom_fullimage_placename"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#FFF" /-->
+
 </LinearLayout>

@@ -1,6 +1,8 @@
 package org.tensorflow.demo.inferenceMotor.model;
 
-public class MaterialCharacteristic {
+import java.io.Serializable;
+
+public class MaterialCharacteristic implements Serializable {
     
     private String name;
     private Object value;

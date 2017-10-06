@@ -12,118 +12,130 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical"
         android:gravity="center">
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_width="wrap_content"
+            android:layout_weight="4"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            android:gravity="center">
 
+            <!-- Title -->
+            <TextView
+                android:id="@+id/textViewOMNI"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#000000"
+                android:text="OMNI"
+                android:textSize="150dp"
+                android:padding="0dp"/>
+
+        <!-- Bleu Blanc Rouge -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:gravity="center_horizontal|top">
 
-                <ImageView
+                <TextView
                     android:layout_width="0dp"
                     android:layout_weight="1"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_damper"/>
+                    android:layout_height="10dp"
+                    android:background="#1666bf" />
 
-                <ImageView
+                <TextView
                     android:layout_width="0dp"
                     android:layout_weight="1"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_battery"/>
+                    android:layout_height="10dp"/>
 
-                <ImageView
+                <TextView
                     android:layout_width="0dp"
                     android:layout_weight="1"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_break"/>
-
-                <ImageView
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_car_lights"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_break_2"/>
-
-                <ImageView
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_piston"/>
-
-                <ImageView
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_radiator"/>
-
-                <ImageView
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_spark_plug"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_turbine"/>
-
-                <ImageView
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_reparation"/>
-
-                <ImageView
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_exhaust_pipe"/>
-
-                <ImageView
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_piston_2"/>
+                    android:layout_height="10dp"
+                    android:background="#e30713" />
 
             </LinearLayout>
 
 
         </LinearLayout>
 
-        <Button
-            android:id="@+id/button_id"
-            android:layout_height="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:gravity="top">
+        <!-- android:background="#22F020" -->
+
+        <TextView
+            android:id="@+id/tewtViewOMNISub"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="top|center_horizontal"
+            android:textSize="30dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="wrap_content"
-            android:text="Scanner un article"
-            android:onClick="scanObject"
-            android:textSize="30sp"/>
+            android:layout_weight="4"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            android:gravity="center">
+            <!-- android:background="#FF00FF" -->
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/smartphone512"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_weight="4"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            android:gravity="center">
+            <!-- android:background="#FFFF00" -->
+
+            <TextView
+                android:id="@+id/tewtViewOMNILegende"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="22dp"/>
+
+            <Button
+                android:id="@+id/button_scan"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:text="Scanner un article"
+                android:textColor="#FFFFFF"
+                android:gravity="center"
+                android:onClick="scanObject"
+                android:textSize="35sp"/>
+
+            </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_weight="2"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            android:gravity="bottom">
+            <!-- android:background="#00FF00" -->
+
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="50sp"
+                android:src="@drawable/sopra_steria_logo"/>
+
+        </LinearLayout>
 
 
 

@@ -16,6 +16,7 @@ limitations under the License.
 package org.tensorflow.demo;
 
 import org.tensorflow.demo.inferenceMotor.model.Characteristic;
+import org.tensorflow.demo.inferenceMotor.model.Material;
 import org.tensorflow.demo.inferenceMotor.model.MaterialCharacteristic;
 
 import java.io.Serializable;
@@ -41,16 +42,20 @@ public class ItemClassifier implements Serializable {
    */
   private Float confidence;
 
+  private Material material;
 
   private List<MaterialCharacteristic> characteristics;
 
 
   public ItemClassifier(
-      final String id, final String title, final Float confidence, List<MaterialCharacteristic> characteristics) {
+      final String id, final String title, final Float confidence,
+      List<MaterialCharacteristic> characteristics,
+      Material material) {
     this.id = id;
     this.title = title;
     this.confidence = confidence;
     this.characteristics = characteristics;
+    this.material = material;
   }
 
   public String getId() {
@@ -76,6 +81,10 @@ public class ItemClassifier implements Serializable {
   public  void setConfidence(Float confidence) {
     this.confidence = confidence;
   }
+
+  public Material getMaterial() { return this.material; }
+
+  public void setMaterial(Material material) { this.material = material; }
 
   @Override
   public String toString() {

@@ -1,0 +1,808 @@
+[
+  {
+    "id": 1,
+    "title": "ventilateur processeur",
+    "code": "1485 687 51",
+    "type": "ventilateur",
+    "picture": "data/img/9.jpg",
+    "description": "Ventilateur processeur noir pour ordinateur fixe",
+    "characteristics": [
+      {
+        "name": "color",
+        "value": "noir"
+      },
+      {
+        "name": "weight",
+        "value": 1
+      },
+      {
+        "name": "height",
+        "value": 90
+      },
+      {
+        "name": "material",
+        "value": "plastique"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "vis gros diamètre",
+    "code": "1478 544 69",
+    "type": "vis",
+    "picture": "data/img/9.jpg",
+    "description": "Vis à tête plate avec boulon, référence HQ",
+    "characteristics": [
+      {
+        "name": "color",
+        "value": "argent"
+      },
+      {
+        "name": "weight",
+        "value": 1
+      },
+      {
+        "name": "height",
+        "value": 40
+      },
+      {
+        "name": "material",
+        "value": "métal"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Filtre radiateur gris",
+    "code": "1468 854 15",
+    "type": "filtre",
+    "picture": "data/img/9.jpg",
+    "description": "Filtre radiateur pour tout type de voiture",
+    "characteristics": [
+      {
+        "name": "color",
+        "value": "gris"
+      },
+      {
+        "name": "weight",
+        "value": 1
+      },
+      {
+        "name": "height",
+        "value": 300
+      },
+      {
+        "name": "material",
+        "value": "carton"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "title": "vis à bois",
+    "code": "1475 785 41",
+    "type": "vis",
+    "picture": "data/img/9.jpg",
+    "description": "Vis à bois à tête plate, grand modèle",
+    "characteristics": [
+      {
+        "name": "color",
+        "value": "cuivre"
+      },
+      {
+        "name": "weight",
+        "value": 1
+      },
+      {
+        "name": "height",
+        "value": 80
+      },
+      {
+        "name": "material",
+        "value": "métal"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "title": "carter bougie",
+    "code": "1475 215 84",
+    "type": "carter",
+    "picture": "data/img/9.jpg",
+    "description": "Carter pour bougie taille moyenne, pour modèle de véhicule Peugeot",
+    "characteristics": [
+      {
+        "name": "color",
+        "value": "noir"
+      },
+      {
+        "name": "weight",
+        "value": 1
+      },
+      {
+        "name": "height",
+        "value": 70
+      },
+      {
+        "name": "material",
+        "value": "plastique"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "title": "piston",
+    "code": "1485 216 54",
+    "type": "piston",
+    "picture": "data/img/9.jpg",
+    "description": "Piston à gaz complet rechange 4000CPS",
+    "characteristics": [
+      {
+        "name": "color",
+        "value": "argent"
+      },
+      {
+        "name": "weight",
+        "value": 1
+      },
+      {
+        "name": "height",
+        "value": 60
+      },
+      {
+        "name": "material",
+        "value": "métal"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "title": "bougie blanche",
+    "code": "1475 216 84",
+    "type": "bougie",
+    "picture": "data/img/9.jpg",
+    "description": "Bougie d'allumage BOSCH Modèle P5ESZ",
+    "characteristics": [
+      {
+        "name": "color",
+        "value": "blanc"
+      },
+      {
+        "name": "weight",
+        "value": 1
+      },
+      {
+        "name": "height",
+        "value": 85
+      },
+      {
+        "name": "material",
+        "value": "métal"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "title": "courroi crantée",
+    "code": "1469 546 45",
+    "type": "courroi",
+    "picture": "data/img/9.jpg",
+    "description": "Courroi de distribution crantée pour modèle Peugeot 3P",
+    "characteristics": [
+      {
+        "name": "color",
+        "value": "noir"
+      },
+      {
+        "name": "weight",
+        "value": 1
+      },
+      {
+        "name": "height",
+        "value": 300
+      },
+      {
+        "name": "material",
+        "value": "caoutchou"
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "title": "bougie",
+    "code": "1465 985 15",
+    "type": "bougie",
+    "picture": "data/img/9.jpg",
+    "description": "Bougie d'allumage Marchal, modèle Corindon",
+    "characteristics": [
+      {
+        "name": "color",
+        "value": "blanc"
+      },
+      {
+        "name": "weight",
+        "value": 1
+      },
+      {
+        "name": "height",
+        "value": 70
+      },
+      {
+        "name": "material",
+        "value": "métal"
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "title": "durite admission",
+    "code": "1482654163",
+    "type": "durite",
+    "picture": "data/img/9.jpg",
+    "description": "Durite d'admission Métal et alliage pour véhicule 3 et 5P",
+    "characteristics": [
+      {
+        "name": "color",
+        "value": "argent"
+      },
+      {
+        "name": "weight",
+        "value": 1
+      },
+      {
+        "name": "height",
+        "value": 125
+      },
+      {
+        "name": "material",
+        "value": "métal"
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "title": "vis de pression",
+    "code": "1478451358",
+    "type": "vis",
+    "picture": "data/img/9.jpg",
+    "description": "Vis de pression",
+    "characteristics": [
+      {
+        "name": "color",
+        "value": "argent"
+      },
+      {
+        "name": "weight",
+        "value": 1
+      },
+      {
+        "name": "height",
+        "value": 55
+      },
+      {
+        "name": "material",
+        "value": "métal"
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "title": "filtre à air",
+    "code": "1496835269",
+    "type": "filtre",
+    "picture": "data/img/9.jpg",
+    "description": "Filtre à air pour véhicule tout type",
+    "characteristics": [
+      {
+        "name": "color",
+        "value": "jaune"
+      },
+      {
+        "name": "weight",
+        "value": 1
+      },
+      {
+        "name": "height",
+        "value": 230
+      },
+      {
+        "name": "material",
+        "value": "carton"
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "title": "vis de bloquage",
+    "code": "1487641135",
+    "type": "vis",
+    "picture": "data/img/9.jpg",
+    "description": "Vis de bloquage de hausse",
+    "characteristics": [
+      {
+        "name": "color",
+        "value": "argent"
+      },
+      {
+        "name": "weight",
+        "value": 1
+      },
+      {
+        "name": "height",
+        "value": 50
+      },
+      {
+        "name": "material",
+        "value": "métal"
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "title": "vis de pointage",
+    "code": "1486431585",
+    "type": "vis",
+    "picture": "data/img/9.jpg",
+    "description": "Vis de pointage en direction",
+    "characteristics": [
+      {
+        "name": "color",
+        "value": "noir"
+      },
+      {
+        "name": "weight",
+        "value": 1
+      },
+      {
+        "name": "height",
+        "value": 100
+      },
+      {
+        "name": "material",
+        "value": "métal"
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "title": "soupape",
+    "code": "1456843135",
+    "type": "soupape",
+    "picture": "data/img/9.jpg",
+    "description": "Soupape de type médieum pour une motorisation 2 roues",
+    "characteristics": [
+      {
+        "name": "color",
+        "value": "argent"
+      },
+      {
+        "name": "weight",
+        "value": 1
+      },
+      {
+        "name": "height",
+        "value": 95
+      },
+      {
+        "name": "material",
+        "value": "métal"
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "title": "vis de pointage",
+    "code": "1448641845",
+    "type": "vis",
+    "picture": "data/img/9.jpg",
+    "description": "Vis de pointage en hauteur",
+    "characteristics": [
+      {
+        "name": "color",
+        "value": "argent"
+      },
+      {
+        "name": "weight",
+        "value": 1
+      },
+      {
+        "name": "height",
+        "value": 40
+      },
+      {
+        "name": "material",
+        "value": "métal"
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "title": "durite filtre à air",
+    "code": "1458635841",
+    "type": "durite",
+    "picture": "data/img/9.jpg",
+    "description": "Durite filtre à air",
+    "characteristics": [
+      {
+        "name": "color",
+        "value": "argent"
+      },
+      {
+        "name": "weight",
+        "value": 1
+      },
+      {
+        "name": "height",
+        "value": 140
+      },
+      {
+        "name": "material",
+        "value": "métal"
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "title": "couroi lisse",
+    "code": "1486318412",
+    "type": "courroi",
+    "picture": "data/img/9.jpg",
+    "description": "Courroi de distributionpour modèle Peugeot 3P",
+    "characteristics": [
+      {
+        "name": "color",
+        "value": "noir"
+      },
+      {
+        "name": "weight",
+        "value": 1
+      },
+      {
+        "name": "height",
+        "value": 300
+      },
+      {
+        "name": "material",
+        "value": "caoutchou"
+      }
+    ]
+  },
+  {
+    "id": 19,
+    "title": "vis sans fin",
+    "code": "1483656843",
+    "type": "vis",
+    "picture": "data/img/9.jpg",
+    "description": "Vis sans fin assemblée",
+    "characteristics": [
+      {
+        "name": "color",
+        "value": "argent"
+      },
+      {
+        "name": "weight",
+        "value": 1
+      },
+      {
+        "name": "height",
+        "value": 45
+      },
+      {
+        "name": "material",
+        "value": "métal"
+      }
+    ]
+  },
+  {
+    "id": 20,
+    "title": "durite radiateur",
+    "code": "1483583591",
+    "type": "durite",
+    "picture": "data/img/9.jpg",
+    "description": "Durite supérieure de réservoir eau",
+    "characteristics": [
+      {
+        "name": "color",
+        "value": "noir"
+      },
+      {
+        "name": "weight",
+        "value": 1
+      },
+      {
+        "name": "height",
+        "value": 85
+      },
+      {
+        "name": "material",
+        "value": "caoutchou"
+      }
+    ]
+  },
+  {
+    "id": 21,
+    "title": "vis HC",
+    "code": "1483583591",
+    "type": "vis",
+    "picture": "data/img/9.jpg",
+    "description": "Vis HC PL M16X2 16",
+    "characteristics": [
+      {
+        "name": "color",
+        "value": "argent"
+      },
+      {
+        "name": "weight",
+        "value": 1
+      },
+      {
+        "name": "height",
+        "value": 35
+      },
+      {
+        "name": "material",
+        "value": "metal"
+      }
+    ]
+  },
+  {
+    "id": 22,
+    "title": "vis simbleautage",
+    "code": "1483583591",
+    "type": "vis",
+    "picture": "data/img/9.jpg",
+    "description": "Vis de simbleautage équipée",
+    "characteristics": [
+      {
+        "name": "color",
+        "value": "argent"
+      },
+      {
+        "name": "weight",
+        "value": 1
+      },
+      {
+        "name": "height",
+        "value": 45
+      },
+      {
+        "name": "material",
+        "value": "metal"
+      }
+    ]
+  },
+  {
+    "id": 23,
+    "title": "vis fixation",
+    "code": "1483583591",
+    "type": "vis",
+    "picture": "data/img/9.jpg",
+    "description": "Vis de fixation d'amortisseur complet",
+    "characteristics": [
+      {
+        "name": "color",
+        "value": "or"
+      },
+      {
+        "name": "weight",
+        "value": 1
+      },
+      {
+        "name": "height",
+        "value": 30
+      },
+      {
+        "name": "material",
+        "value": "metal"
+      }
+    ]
+  },
+  {
+    "id": 24,
+    "title": "vis WILD ZR",
+    "code": "1483583591",
+    "type": "vis",
+    "picture": "data/img/9.jpg",
+    "description": "Vis pour appareil de contrôle WILD ZR",
+    "characteristics": [
+      {
+        "name": "color",
+        "value": "argent"
+      },
+      {
+        "name": "weight",
+        "value": 1
+      },
+      {
+        "name": "height",
+        "value": 20
+      },
+      {
+        "name": "material",
+        "value": "metal"
+      }
+    ]
+  },
+  {
+    "id": 25,
+    "title": "vis à billes et noix",
+    "code": "1483583591",
+    "type": "vis",
+    "picture": "data/img/9.jpg",
+    "description": "Vis à billes et noix",
+    "characteristics": [
+      {
+        "name": "color",
+        "value": "argent"
+      },
+      {
+        "name": "weight",
+        "value": 1
+      },
+      {
+        "name": "height",
+        "value": 60
+      },
+      {
+        "name": "material",
+        "value": "metal"
+      }
+    ]
+  },
+  {
+    "id": 26,
+    "title": "boulon entretoise",
+    "code": "1483583591",
+    "type": "boulon",
+    "picture": "data/img/9.jpg",
+    "description": "boulon entretoise hexagonal chapiteau diamètre 3",
+    "characteristics": [
+      {
+        "name": "color",
+        "value": "noir"
+      },
+      {
+        "name": "weight",
+        "value": 1
+      },
+      {
+        "name": "height",
+        "value": 15
+      },
+      {
+        "name": "material",
+        "value": "metal"
+      }
+    ]
+  },
+  {
+    "id": 27,
+    "title": "boulon de sécurité",
+    "code": "1483583591",
+    "type": "boulon",
+    "picture": "data/img/9.jpg",
+    "description": "boulon de sécurité argent hexagonal ",
+    "characteristics": [
+      {
+        "name": "color",
+        "value": "argent"
+      },
+      {
+        "name": "weight",
+        "value": 1
+      },
+      {
+        "name": "height",
+        "value": 10
+      },
+      {
+        "name": "material",
+        "value": "metal"
+      }
+    ]
+  },
+  {
+    "id": 28,
+    "title": "boulon de contrainte",
+    "code": "1483583591",
+    "type": "boulon",
+    "picture": "data/img/9.jpg",
+    "description": "Boulon de contrainte B M8 X 50 MMN 209",
+    "characteristics": [
+      {
+        "name": "color",
+        "value": "argent"
+      },
+      {
+        "name": "weight",
+        "value": 1
+      },
+      {
+        "name": "height",
+        "value": 8
+      },
+      {
+        "name": "material",
+        "value": "metal"
+      }
+    ]
+  },
+  {
+    "id": 29,
+    "title": "boulon creux",
+    "code": "1483583591",
+    "type": "boulon",
+    "picture": "data/img/9.jpg",
+    "description": "boulon creux avec bille d'étranglement",
+    "characteristics": [
+      {
+        "name": "color",
+        "value": "argent"
+      },
+      {
+        "name": "weight",
+        "value": 1
+      },
+      {
+        "name": "height",
+        "value": 6
+      },
+      {
+        "name": "material",
+        "value": "metal"
+      }
+    ]
+  },
+  {
+    "id": 30,
+    "title": "rondelle fixation",
+    "code": "1483583591",
+    "type": "rondelle",
+    "picture": "data/img/9.jpg",
+    "description": "Rondelle de vis fixation touche",
+    "characteristics": [
+      {
+        "name": "color",
+        "value": "argent"
+      },
+      {
+        "name": "weight",
+        "value": 1
+      },
+      {
+        "name": "height",
+        "value": 12
+      },
+      {
+        "name": "material",
+        "value": "metal"
+      }
+    ]
+  },
+  {
+    "id": 31,
+    "title": "rondelle d'appui",
+    "code": "1483583591",
+    "type": "rondelle",
+    "picture": "data/img/9.jpg",
+    "description": "Rondelle d'appui de la membrane et de la bille",
+    "characteristics": [
+      {
+        "name": "color",
+        "value": "argent"
+      },
+      {
+        "name": "weight",
+        "value": 1
+      },
+      {
+        "name": "height",
+        "value": 10
+      },
+      {
+        "name": "material",
+        "value": "metal"
+      }
+    ]
+  }
+]

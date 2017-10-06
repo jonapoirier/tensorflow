@@ -83,9 +83,9 @@ public class ClassifierActivity extends CameraActivity implements OnImageAvailab
   private static final String LABEL_FILE =
       "file:///android_asset/imagenet_comp_graph_label_strings.txt";*/
 
-  private static final String MODEL_FILE = "file:///android_asset/optimized_graph.pb";
+  private static final String MODEL_FILE = "file:///android_asset/optimized_graph_02102017.pb";
   private static final String LABEL_FILE =
-          "file:///android_asset/retrained_labels.txt";
+          "file:///android_asset/retrained_labels_02102017.txt";
 
 
   private static final boolean MAINTAIN_ASPECT = true;
@@ -99,7 +99,7 @@ public class ClassifierActivity extends CameraActivity implements OnImageAvailab
 
   private boolean computingStartActivity = false;
 
-  private List<ItemClassifier> allresults = new ArrayList<>();
+  private List<ItemClassifier> allResults = new ArrayList<>();
 
   private BorderedText borderedText;
 
@@ -191,9 +191,8 @@ public class ClassifierActivity extends CameraActivity implements OnImageAvailab
             final long startTime = SystemClock.uptimeMillis();
             final List<Classifier.Recognition> results = classifier.recognizeImage(croppedBitmap);
             lastProcessingTimeMs = SystemClock.uptimeMillis() - startTime;
-            LOGGER.i("Detect: %s", results);
+            LOGGER.i("Detect: %s  %s", results, lastProcessingTimeMs);
             cropCopyBitmap = Bitmap.createBitmap(croppedBitmap);
-
 
 
             if (results != null && !results.isEmpty()) {
@@ -205,36 +204,27 @@ public class ClassifierActivity extends CameraActivity implements OnImageAvailab
 
               if(progressBar.getProgress() < 100) {
 
-                progressBar.incrementProgressBy(5);
+                progressBar.incrementProgressBy(20);
 
                 for (final Classifier.Recognition result : results) {
-                  // TODO JPR placer caractéristiques
-                  allresults.add(new ItemClassifier(result.getId(), result.getTitle(), result.getConfidence(), null));
+                  allResults.add(new ItemClassifier(result.getTitle(), null, result.getConfidence(), null, null));
                 }
 
               } else if (!computingStartActivity){
-
-
 
                 computingStartActivity = true;
                 progressBar.setProgress(0);
 
                 LOGGER.i("Opening One Item Activity");
-                LOGGER.i("Results : " + allresults.toString());
+                LOGGER.i("Results : " + allResults.toString());
                 Intent intentOneItem = new Intent(progressBar.getContext(), ItemsActivity.class);
-                intentOneItem.putExtra("results", (ArrayList<ItemClassifier>) allresults);
+                intentOneItem.putExtra("results", (ArrayList<ItemClassifier>) allResults);
                 progressBar.getContext().startActivity(intentOneItem);
 
                 // allresults.clear();
                 computingStartActivity = false;
               }
             }
-
-
-            /*if (resultsView==null) {
-              resultsView = (ResultsView) findViewById(R.id.results);
-            }
-            resultsView.setResults(results);*/
 
             requestRender();
             computing = false;

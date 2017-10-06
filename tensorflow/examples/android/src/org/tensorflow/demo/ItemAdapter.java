@@ -2,6 +2,8 @@ package org.tensorflow.demo;
 
 import android.content.Context;
 import android.content.DialogInterface;
+import android.graphics.Color;
+import android.graphics.PorterDuff;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
@@ -23,6 +25,7 @@ import org.tensorflow.demo.inferenceMotor.model.Config;
 import org.tensorflow.demo.inferenceMotor.model.Material;
 import org.tensorflow.demo.inferenceMotor.model.MaterialCharacteristic;
 import org.tensorflow.demo.inferenceMotor.model.Question;
+import org.w3c.dom.Text;
 
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
@@ -55,11 +58,12 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
         private final TextView textCardQuestionView;
 
         private final TextView textViewItemColor;
-        private final TextView textViewItemWeight;
+        //private final TextView textViewItemWeight;
         private final TextView textViewItemHeight;
         private final TextView textViewItemMaterial;
 
         private final ImageView imageViewItem;
+        private final CardView cardItemView;
         private final CardView cardQuestionView;
         private final DonutProgress donutProgress;
 
@@ -76,10 +80,11 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
             textComputeQuestionView = (TextView) v.findViewById(R.id.textComputeQuestionView);
             textCardQuestionView = (TextView) v.findViewById(R.id.textCardQuestionView);
             textViewItemColor = (TextView) v.findViewById(R.id.textViewItemColor);
-            textViewItemWeight = (TextView) v.findViewById(R.id.textViewItemWeight);
+            //textViewItemWeight = (TextView) v.findViewById(R.id.textViewItemWeight);
             textViewItemHeight = (TextView) v.findViewById(R.id.textViewItemHeight);
             textViewItemMaterial = (TextView) v.findViewById(R.id.textViewItemMaterial);
             imageViewItem = (ImageView) v.findViewById(R.id.imageViewItem);
+            cardItemView = (CardView) v.findViewById(R.id.cardItemView);
             cardQuestionView = (CardView) v.findViewById(R.id.cardQuestionView);
             donutProgress = (DonutProgress) v.findViewById(R.id.donutProgress);
             cardQuestionLinearLayoutH = (LinearLayout) v.findViewById(R.id.cardQuestionLinearLayoutH);
@@ -101,9 +106,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
         public TextView getTextViewItemColor() {
             return textViewItemColor;
         }
-        public TextView getTextViewItemWeight() {
-            return textViewItemWeight;
-        }
+        //public TextView getTextViewItemWeight() {return textViewItemWeight; }
         public TextView getTextViewItemHeight() {
             return textViewItemHeight;
         }
@@ -113,6 +116,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
         public ImageView getImageViewItem() {
             return imageViewItem;
         }
+        public CardView getCardItemView() { return cardItemView; }
         public CardView getCardQuestionView() { return cardQuestionView; }
         public DonutProgress getDonutProgress() { return donutProgress; }
         public LinearLayout getCardQuestionLinearLayoutH() { return cardQuestionLinearLayoutH; }
@@ -150,7 +154,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
 
     // Replace the contents of a view (invoked by the layout manager)
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
+    public void onBindViewHolder(final ViewHolder holder, final int position) {
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
         //holder.mTextView.setText(mDataset[position]);
@@ -190,12 +194,16 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
                         Button buttonYes = new Button(holder.getContext());
                         buttonYes.setText("oui");
                         buttonYes.setOnClickListener(new MyLovelyOnClickListener(this, recyclerView, mDataSet));
+                        buttonYes.getBackground().setColorFilter(0xFF1666BF, PorterDuff.Mode.MULTIPLY);
+                        buttonYes.setTextColor(Color.WHITE);
 
                         holder.getCardQuestionLinearLayoutH().addView(buttonYes);
 
                         Button buttonNo = new Button(holder.getContext());
                         buttonNo.setText("non");
                         buttonNo.setOnClickListener(new MyLovelyOnClickListener(this, recyclerView, mDataSet));
+                        buttonNo.getBackground().setColorFilter(0xFF1666BF, PorterDuff.Mode.MULTIPLY);
+                        buttonNo.setTextColor(Color.WHITE);
 
                         holder.getCardQuestionLinearLayoutH().addView(buttonNo);
                     } else {
@@ -205,6 +213,8 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
                             button.setText(proposal);
                             button.setSingleLine(true);
                             button.setOnClickListener(new MyLovelyOnClickListener(this, recyclerView, mDataSet));
+                            button.getBackground().setColorFilter(0xFF1666BF, PorterDuff.Mode.MULTIPLY);
+                            button.setTextColor(Color.WHITE);
 
                             holder.getCardQuestionLinearLayoutH().addView(button);
                         }
@@ -222,10 +232,18 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
             }
         }
 
+        // Title
+        String title = mDataSet.get(position).getMaterial().getCode()
+                + " - " + mDataSet.get(position).getTitle();
+        holder.getTextViewItemTitle().setText(title);
 
-        holder.getTextViewItemTitle().setText(mDataSet.get(position).getTitle());
-        //holder.getTextViewItemConfidence().setText(String.format("(%.1f%%) ", mDataSet.get(position).getConfidence() * 100.0f));
-        holder.getImageViewItem().setImageResource(R.drawable.vis);
+        // Image
+        //holder.getImageViewItem().setImageResource(R.drawable.vis);
+
+        String mDrawableName = "p" + mDataSet.get(position).getId();
+        LOGGER.i("mDrawableName : " + mDrawableName);
+        int resID = holder.getContext().getResources().getIdentifier(mDrawableName , "drawable", holder.getContext().getPackageName());
+        holder.getImageViewItem().setImageResource(resID);
 
         float number = mDataSet.get(position).getConfidence() * 100.0f;
         number= (short)(100*number);
@@ -241,12 +259,8 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
                 holder.getTextViewItemColor().setText((String) materialCharacteristic.getValue());
             }
 
-            if("weight".equals(materialCharacteristic.getName())) {
-                holder.getTextViewItemWeight().setText(String.valueOf((Double) materialCharacteristic.getValue()));
-            }
-
             if("height".equals(materialCharacteristic.getName())) {
-                holder.getTextViewItemHeight().setText(String.valueOf((Double) materialCharacteristic.getValue()) + " cm");
+                holder.getTextViewItemHeight().setText(String.valueOf((Double) materialCharacteristic.getValue()) + " mm");
             }
 
             if("material".equals(materialCharacteristic.getName())) {
@@ -256,19 +270,23 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
         }
 
         // Onclick image
-        holder.getImageViewItem().setClickable(true);
-        holder.getImageViewItem().setOnClickListener(new View.OnClickListener() {
+        holder.getCardItemView().setClickable(true);
+        holder.getCardItemView().setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ImageView imageView = (ImageView) v;
-
+                CardView cardView = (CardView) v;
                 AlertDialog.Builder imageDialog = new AlertDialog.Builder(v.getContext());
                 LayoutInflater inflater = (LayoutInflater) v.getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
                 View layout = inflater.inflate(R.layout.custom_fullimage_dialog,
                         (ViewGroup) v.findViewById(R.id.layout_root));
                 ImageView image = (ImageView) layout.findViewById(R.id.fullimage);
-                image.setImageDrawable(imageView.getDrawable());
+                //image.setImageDrawable(holder.getImageViewItem().getDrawable());
+
+                String mDrawableName = "p" + mDataSet.get(position).getId();
+                int resID = holder.getContext().getResources().getIdentifier(mDrawableName , "drawable", holder.getContext().getPackageName());
+                image.setImageResource(resID);
+
                 imageDialog.setView(layout);
                 imageDialog.setPositiveButton("OK", new DialogInterface.OnClickListener(){
 
@@ -278,12 +296,24 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
 
                 });
 
+                TextView textViewTitle = (TextView) layout.findViewById(R.id.titleDialogView);
+                TextView descriptionViewTitle = (TextView) layout.findViewById(R.id.descriptionDialogView);
+
+                String title = mDataSet.get(position).getMaterial().getCode()
+                        + " - " + mDataSet.get(position).getTitle();
+                textViewTitle.setText(title);
+                descriptionViewTitle.setText(mDataSet.get(position).getMaterial().getDescription());
+
+                LOGGER.i(mDataSet.get(position).getMaterial().toString());
+
                 imageDialog.create();
                 imageDialog.show();
 
             }
         });
     }
+
+
 
     // Return the size of your dataset (invoked by the layout manager)
     @Override
