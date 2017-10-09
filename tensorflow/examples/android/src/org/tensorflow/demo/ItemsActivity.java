@@ -1,5 +1,6 @@
 package org.tensorflow.demo;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -30,6 +31,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
@@ -105,11 +107,11 @@ public class ItemsActivity extends AppCompatActivity {
             // We compute the results (never null)
         for (ItemClassifier result: results) {
 
-            // We consider 5 pictures
+            // We consider 10 pictures
             if(mapAggregatedResults.get(result.getId()) != null) {
 
                 ItemClassifier classifier = mapAggregatedResults.get(result.getId());
-                classifier.setConfidence(classifier.getConfidence() + (result.getConfidence() / 5));
+                classifier.setConfidence(classifier.getConfidence() + (result.getConfidence() / 10));
 
             } else {
 
@@ -133,19 +135,33 @@ public class ItemsActivity extends AppCompatActivity {
                         materialCharacteristics,
                         materialFound);
 
-                classifier.setConfidence(result.getConfidence() / 5);
+                classifier.setConfidence(result.getConfidence() / 10);
 
                 mapAggregatedResults.put(result.getId(), classifier);
             }
         }
-        nbItemsFound = mapAggregatedResults.size();
+
         allResults = new ArrayList<>(mapAggregatedResults.values());
 
+        // On retire les objets avec moins de 10% de résultats
+        Iterator<ItemClassifier> itemClassifierIterator = allResults.iterator();
+        while (itemClassifierIterator.hasNext()) {
+            ItemClassifier item = itemClassifierIterator.next();
+            LOGGER.i("confidence : " + item.getConfidence());
+            if(item.getConfidence() < 0.10) {
+                mapAggregatedResults.remove(item.getId());
+                itemClassifierIterator.remove();
+            }
+        }
+
+        nbItemsFound = mapAggregatedResults.size();
 
         for (ItemClassifier item : allResults) {
             // We build the listID parameter
             listID.add(item.getId());
         }
+
+
 
         // Essai avec moteur d'inférence
         if(nbItemsFound >= 1) {
@@ -168,6 +184,13 @@ public class ItemsActivity extends AppCompatActivity {
         // We display the list of items
         mAdapter = new ItemAdapter(allResults, mRecyclerView, allMaterials, question, config, characteristics);
         mRecyclerView.setAdapter(mAdapter);
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(mRecyclerView.getContext(), MainActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
     }
 
 

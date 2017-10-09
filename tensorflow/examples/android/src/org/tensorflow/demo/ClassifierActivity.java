@@ -89,8 +89,10 @@ public class ClassifierActivity extends CameraActivity implements OnImageAvailab
 
 
   private static final boolean MAINTAIN_ASPECT = true;
-
   private static final Size DESIRED_PREVIEW_SIZE = new Size(640, 480);
+
+  // Static (bad thing I know...)
+  public static int nbImagesStored = 0;
 
   private Integer sensorOrientation;
   private Classifier classifier;
@@ -98,8 +100,9 @@ public class ClassifierActivity extends CameraActivity implements OnImageAvailab
   private Matrix cropToFrameTransform;
 
   private boolean computingStartActivity = false;
-
+  private int nbLoops = 0;
   private List<ItemClassifier> allResults = new ArrayList<>();
+
 
   private BorderedText borderedText;
 
@@ -189,43 +192,55 @@ public class ClassifierActivity extends CameraActivity implements OnImageAvailab
           @Override
           public void run() {
             final long startTime = SystemClock.uptimeMillis();
-            final List<Classifier.Recognition> results = classifier.recognizeImage(croppedBitmap);
+            //final List<Classifier.Recognition> results = classifier.recognizeImage(croppedBitmap);
+
+            try {
+              Thread.sleep(500);
+            } catch (InterruptedException e) {
+              e.printStackTrace();
+            }
+
             lastProcessingTimeMs = SystemClock.uptimeMillis() - startTime;
-            LOGGER.i("Detect: %s  %s", results, lastProcessingTimeMs);
-            cropCopyBitmap = Bitmap.createBitmap(croppedBitmap);
+            //LOGGER.i("Detect: %s  %s", results, lastProcessingTimeMs);
 
+            // We start taking photos after 2 secs
+            if(nbLoops > 3) {
 
-            if (results != null && !results.isEmpty()) {
+              cropCopyBitmap = Bitmap.createBitmap(croppedBitmap);
 
-              if( progressBar == null) {
-                progressBar = (ProgressBar) findViewById(R.id.progressBar);
-              }
-              LOGGER.i("progress ClassifierActivity : " + progressBar);
+              if (nbImagesStored < 10) {
 
-              if(progressBar.getProgress() < 100) {
+                if (progressBar == null) {
+                  progressBar = (ProgressBar) findViewById(R.id.progressBar);
+                }
+                LOGGER.i("progress ClassifierActivity : " + progressBar);
 
-                progressBar.incrementProgressBy(20);
+                ModelingActivity.listCroppedBitmap.add(cropCopyBitmap);
+                nbImagesStored++;
 
-                for (final Classifier.Recognition result : results) {
-                  allResults.add(new ItemClassifier(result.getTitle(), null, result.getConfidence(), null, null));
+                if (progressBar.getProgress() < 100) {
+
+                  progressBar.incrementProgressBy(10);
                 }
 
-              } else if (!computingStartActivity){
-
-                computingStartActivity = true;
+              } else {
                 progressBar.setProgress(0);
 
                 LOGGER.i("Opening One Item Activity");
                 LOGGER.i("Results : " + allResults.toString());
-                Intent intentOneItem = new Intent(progressBar.getContext(), ItemsActivity.class);
-                intentOneItem.putExtra("results", (ArrayList<ItemClassifier>) allResults);
-                progressBar.getContext().startActivity(intentOneItem);
+                Intent modelingIntent = new Intent(progressBar.getContext(), ModelingActivity.class);
+                //itemsIntent.putExtra("results", (ArrayList<ItemClassifier>) allResults);
+                progressBar.getContext().startActivity(modelingIntent);
 
                 // allresults.clear();
-                computingStartActivity = false;
+                //computingStartActivity = false;
+                nbImagesStored = 0;
+                nbLoops = 0;
               }
+
             }
 
+            nbLoops++;
             requestRender();
             computing = false;
             if (postInferenceCallback != null) {
