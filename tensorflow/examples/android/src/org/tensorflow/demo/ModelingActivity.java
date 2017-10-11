@@ -35,9 +35,9 @@ public class ModelingActivity extends AppCompatActivity {
     private static final float IMAGE_STD = 128;
     private static final String INPUT_NAME = "Mul";
     private static final String OUTPUT_NAME = "final_result";
-    private static final String MODEL_FILE = "file:///android_asset/optimized_graph_02102017.pb";
+    private static final String MODEL_FILE = "file:///android_asset/optimized_graph_09102017.pb";
     private static final String LABEL_FILE =
-            "file:///android_asset/retrained_labels_02102017.txt";
+            "file:///android_asset/retrained_labels_09102017.txt";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

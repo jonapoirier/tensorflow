@@ -83,9 +83,9 @@ public class ClassifierActivity extends CameraActivity implements OnImageAvailab
   private static final String LABEL_FILE =
       "file:///android_asset/imagenet_comp_graph_label_strings.txt";*/
 
-  private static final String MODEL_FILE = "file:///android_asset/optimized_graph_02102017.pb";
+  private static final String MODEL_FILE = "file:///android_asset/optimized_graph_09102017.pb";
   private static final String LABEL_FILE =
-          "file:///android_asset/retrained_labels_02102017.txt";
+          "file:///android_asset/retrained_labels_09102017.txt";
 
 
   private static final boolean MAINTAIN_ASPECT = true;

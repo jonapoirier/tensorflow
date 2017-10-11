@@ -48,6 +48,21 @@ public class Material implements Serializable {
     private String code;
 
     /**
+     * Responsable reparation
+     */
+    private String responsableReparation;
+
+    /**
+     * Operateur
+     */
+    private String operateur;
+
+    /**
+     * Inactive
+     */
+    private int inactive;
+
+    /**
      * charateristics of object
      */
     private List<MaterialCharacteristic> characteristics;
@@ -59,7 +74,10 @@ public class Material implements Serializable {
     public Material(String id, String type, int index, String title,
                     String picture, List<MaterialCharacteristic> characteristics,
                     String description,
-                    String code) {
+                    String code,
+                    String responsableReparation,
+                    String operateur,
+                    int inactive) {
         super();
         this.id = id;
         this.type = type;
@@ -69,6 +87,9 @@ public class Material implements Serializable {
         this.characteristics = characteristics;
         this.description = description;
         this.code = code;
+        this.responsableReparation = responsableReparation;
+        this.operateur = operateur;
+        this.inactive = inactive;
     }
 
     public String getId() {
@@ -126,6 +147,18 @@ public class Material implements Serializable {
     public String getCode() { return this.code; }
 
     public void setCode(String code) { this.code = code; }
+
+    public String getResponsableReparation() { return this.responsableReparation; }
+
+    public void setResponsableReparation(String responsableReparation) { this.responsableReparation = responsableReparation; }
+
+    public String getOperateur() { return this.operateur; }
+
+    public void setOperateur(String operateur) { this.operateur = operateur; }
+
+    public int getInactive() { return this.inactive; }
+
+    public void setInactive(int inactive) { this.inactive = inactive; }
 
     @Override
     public String toString() {

@@ -164,7 +164,7 @@ public class ItemsActivity extends AppCompatActivity {
 
 
         // Essai avec moteur d'inférence
-        if(nbItemsFound >= 1) {
+        if(nbItemsFound > 1) {
             try {
                 question = ComputeQuestion.getInterestingQuestion(listID, false, allMaterials, config, characteristics);
             } catch (FileNotFoundException e) {

@@ -2,9 +2,12 @@
   {
     "id": 1,
     "title": "ventilateur processeur",
-    "code": "1485 687 51",
+    "code": "14856 875 14",
     "type": "ventilateur",
     "picture": "data/img/9.jpg",
+    "responsableReparation": "MOBILITE BLINDES",
+    "inactive": 0,
+    "operateur": "Outillage commun",
     "description": "Ventilateur processeur noir pour ordinateur fixe",
     "characteristics": [
       {
@@ -27,11 +30,14 @@
   },
   {
     "id": 2,
-    "title": "vis gros diamètre",
+    "title": "vis gros diametre",
     "code": "1478 544 69",
     "type": "vis",
     "picture": "data/img/9.jpg",
-    "description": "Vis à tête plate avec boulon, référence HQ",
+    "responsableReparation": "CONDUITE DE LA MAINTENANCE",
+    "inactive": 0,
+    "operateur": "Vis Boulonnerie Non Substituables",
+    "description": "Vis à tête plate avec boulon, reference HQ",
     "characteristics": [
       {
         "name": "color",
@@ -47,7 +53,7 @@
       },
       {
         "name": "material",
-        "value": "métal"
+        "value": "metal"
       }
     ]
   },
@@ -57,6 +63,9 @@
     "code": "1468 854 15",
     "type": "filtre",
     "picture": "data/img/9.jpg",
+    "responsableReparation": "Mobilite VAB/VL",
+    "inactive": 0,
+    "operateur": "Rechanges non reperables VBCI",
     "description": "Filtre radiateur pour tout type de voiture",
     "characteristics": [
       {
@@ -83,7 +92,10 @@
     "code": "1475 785 41",
     "type": "vis",
     "picture": "data/img/9.jpg",
-    "description": "Vis à bois à tête plate, grand modèle",
+    "responsableReparation": "CONDUITE DE LA MAINTENANCE",
+    "inactive": 0,
+    "operateur": "Vis Boulonnerie Non Substituables",
+    "description": "Vis à bois à tête plate, grand modele",
     "characteristics": [
       {
         "name": "color",
@@ -99,7 +111,7 @@
       },
       {
         "name": "material",
-        "value": "métal"
+        "value": "metal"
       }
     ]
   },
@@ -109,7 +121,10 @@
     "code": "1475 215 84",
     "type": "carter",
     "picture": "data/img/9.jpg",
-    "description": "Carter pour bougie taille moyenne, pour modèle de véhicule Peugeot",
+    "responsableReparation": "Atelier cellule et moteur gazelle",
+    "inactive": 1,
+    "operateur": "Rechanges non reperables VBCI",
+    "description": "Carter pour bougie taille moyenne, pour modele de vehicule Peugeot",
     "characteristics": [
       {
         "name": "color",
@@ -135,6 +150,9 @@
     "code": "1485 216 54",
     "type": "piston",
     "picture": "data/img/9.jpg",
+    "responsableReparation": "Atelier cellule et moteur gazelle",
+    "inactive": 1,
+    "operateur": "Rechanges non reperables VBCI",
     "description": "Piston à gaz complet rechange 4000CPS",
     "characteristics": [
       {
@@ -151,7 +169,7 @@
       },
       {
         "name": "material",
-        "value": "métal"
+        "value": "metal"
       }
     ]
   },
@@ -161,7 +179,10 @@
     "code": "1475 216 84",
     "type": "bougie",
     "picture": "data/img/9.jpg",
-    "description": "Bougie d'allumage BOSCH Modèle P5ESZ",
+    "responsableReparation": "Atelier cellule et moteur gazelle",
+    "inactive": 0,
+    "operateur": "Rechanges non reperables VBCI",
+    "description": "Bougie d'allumage BOSCH Modele P5ESZ",
     "characteristics": [
       {
         "name": "color",
@@ -177,17 +198,20 @@
       },
       {
         "name": "material",
-        "value": "métal"
+        "value": "metal"
       }
     ]
   },
   {
     "id": 8,
-    "title": "courroi crantée",
+    "title": "courroi crantee",
     "code": "1469 546 45",
     "type": "courroi",
     "picture": "data/img/9.jpg",
-    "description": "Courroi de distribution crantée pour modèle Peugeot 3P",
+    "responsableReparation": "Mobilite Roues",
+    "inactive": 0,
+    "operateur": "Rechanges non reperables VBCI",
+    "description": "Courroi de distribution crantee pour modele Peugeot 3P",
     "characteristics": [
       {
         "name": "color",
@@ -210,10 +234,13 @@
   {
     "id": 9,
     "title": "bougie",
-    "code": "1465 985 15",
+    "code": "1462 598 15",
     "type": "bougie",
     "picture": "data/img/9.jpg",
-    "description": "Bougie d'allumage Marchal, modèle Corindon",
+    "responsableReparation": "Mobilite VAB/VL",
+    "inactive": 0,
+    "operateur": "Rechanges non reperables VBCI",
+    "description": "Bougie d'allumage Marchal, modele Corindon",
     "characteristics": [
       {
         "name": "color",
@@ -229,17 +256,20 @@
       },
       {
         "name": "material",
-        "value": "métal"
+        "value": "metal"
       }
     ]
   },
   {
     "id": 10,
     "title": "durite admission",
-    "code": "1482654163",
+    "code": 1482654163,
     "type": "durite",
     "picture": "data/img/9.jpg",
-    "description": "Durite d'admission Métal et alliage pour véhicule 3 et 5P",
+    "responsableReparation": "Mobilite VAB/VL",
+    "inactive": 0,
+    "operateur": "Rechanges non reperables VBCI",
+    "description": "Durite d'admission Metal et alliage pour vehicule 3 et 5P",
     "characteristics": [
       {
         "name": "color",
@@ -255,16 +285,19 @@
       },
       {
         "name": "material",
-        "value": "métal"
+        "value": "metal"
       }
     ]
   },
   {
     "id": 11,
     "title": "vis de pression",
-    "code": "1478451358",
+    "code": 1478451358,
     "type": "vis",
     "picture": "data/img/9.jpg",
+    "responsableReparation": "Mobilite VAB/VL",
+    "inactive": 0,
+    "operateur": "Vis Boulonnerie Non Substituables",
     "description": "Vis de pression",
     "characteristics": [
       {
@@ -281,17 +314,20 @@
       },
       {
         "name": "material",
-        "value": "métal"
+        "value": "metal"
       }
     ]
   },
   {
     "id": 12,
     "title": "filtre à air",
-    "code": "1496835269",
+    "code": 1496835269,
     "type": "filtre",
     "picture": "data/img/9.jpg",
-    "description": "Filtre à air pour véhicule tout type",
+    "responsableReparation": "Mobilite VAB/VL",
+    "inactive": 0,
+    "operateur": "Rechanges non reperables VBCI",
+    "description": "Filtre à air pour vehicule tout type",
     "characteristics": [
       {
         "name": "color",
@@ -314,9 +350,12 @@
   {
     "id": 13,
     "title": "vis de bloquage",
-    "code": "1487641135",
+    "code": 1487641135,
     "type": "vis",
     "picture": "data/img/9.jpg",
+    "responsableReparation": "Atelier verification appareil de levage",
+    "inactive": 0,
+    "operateur": "Vis Boulonnerie Non Substituables",
     "description": "Vis de bloquage de hausse",
     "characteristics": [
       {
@@ -333,16 +372,19 @@
       },
       {
         "name": "material",
-        "value": "métal"
+        "value": "metal"
       }
     ]
   },
   {
     "id": 14,
     "title": "vis de pointage",
-    "code": "1486431585",
+    "code": 1486431585,
     "type": "vis",
     "picture": "data/img/9.jpg",
+    "responsableReparation": "Atelier DEM Spartiate",
+    "inactive": 0,
+    "operateur": "Vis Boulonnerie Non Substituables",
     "description": "Vis de pointage en direction",
     "characteristics": [
       {
@@ -359,17 +401,20 @@
       },
       {
         "name": "material",
-        "value": "métal"
+        "value": "metal"
       }
     ]
   },
   {
     "id": 15,
     "title": "soupape",
-    "code": "1456843135",
+    "code": 1456843135,
     "type": "soupape",
     "picture": "data/img/9.jpg",
-    "description": "Soupape de type médieum pour une motorisation 2 roues",
+    "responsableReparation": "Atelier Diademe HM",
+    "inactive": 0,
+    "operateur": "Rechanges mistral et outillages associes",
+    "description": "Soupape de type medieum pour une motorisation 2 roues",
     "characteristics": [
       {
         "name": "color",
@@ -385,16 +430,19 @@
       },
       {
         "name": "material",
-        "value": "métal"
+        "value": "metal"
       }
     ]
   },
   {
     "id": 16,
     "title": "vis de pointage",
-    "code": "1448641845",
+    "code": 1448641845,
     "type": "vis",
     "picture": "data/img/9.jpg",
+    "responsableReparation": "Atelier verification appareil de levage",
+    "inactive": 0,
+    "operateur": "Vis Boulonnerie Non Substituables",
     "description": "Vis de pointage en hauteur",
     "characteristics": [
       {
@@ -411,16 +459,19 @@
       },
       {
         "name": "material",
-        "value": "métal"
+        "value": "metal"
       }
     ]
   },
   {
     "id": 17,
     "title": "durite filtre à air",
-    "code": "1458635841",
+    "code": 1458635841,
     "type": "durite",
     "picture": "data/img/9.jpg",
+    "responsableReparation": "Mobilite VAB/VL",
+    "inactive": 1,
+    "operateur": "Rechanges mistral et outillages associes",
     "description": "Durite filtre à air",
     "characteristics": [
       {
@@ -437,17 +488,20 @@
       },
       {
         "name": "material",
-        "value": "métal"
+        "value": "metal"
       }
     ]
   },
   {
     "id": 18,
     "title": "couroi lisse",
-    "code": "1486318412",
+    "code": 1486318412,
     "type": "courroi",
     "picture": "data/img/9.jpg",
-    "description": "Courroi de distributionpour modèle Peugeot 3P",
+    "responsableReparation": "Mobilite VAB/VL",
+    "inactive": 0,
+    "operateur": "Rechanges non reperables VBCI",
+    "description": "Courroi de distributionpour modele Peugeot 3P",
     "characteristics": [
       {
         "name": "color",
@@ -470,10 +524,13 @@
   {
     "id": 19,
     "title": "vis sans fin",
-    "code": "1483656843",
+    "code": 1483656843,
     "type": "vis",
     "picture": "data/img/9.jpg",
-    "description": "Vis sans fin assemblée",
+    "responsableReparation": "Atelier verification appareil de levage",
+    "inactive": 0,
+    "operateur": "Vis Boulonnerie Non Substituables",
+    "description": "Vis sans fin assemblee",
     "characteristics": [
       {
         "name": "color",
@@ -489,17 +546,20 @@
       },
       {
         "name": "material",
-        "value": "métal"
+        "value": "metal"
       }
     ]
   },
   {
     "id": 20,
     "title": "durite radiateur",
-    "code": "1483583591",
+    "code": 1483583591,
     "type": "durite",
     "picture": "data/img/9.jpg",
-    "description": "Durite supérieure de réservoir eau",
+    "responsableReparation": "Mobilite VAB/VL",
+    "inactive": 0,
+    "operateur": "Rechanges mistral et outillages associes",
+    "description": "Durite superieure de reservoir eau",
     "characteristics": [
       {
         "name": "color",
@@ -522,9 +582,12 @@
   {
     "id": 21,
     "title": "vis HC",
-    "code": "1483583591",
+    "code": 1483583591,
     "type": "vis",
     "picture": "data/img/9.jpg",
+    "responsableReparation": "Atelier verification appareil de levage",
+    "inactive": 0,
+    "operateur": "Vis Boulonnerie Non Substituables",
     "description": "Vis HC PL M16X2 16",
     "characteristics": [
       {
@@ -548,10 +611,13 @@
   {
     "id": 22,
     "title": "vis simbleautage",
-    "code": "1483583591",
+    "code": 1483583591,
     "type": "vis",
     "picture": "data/img/9.jpg",
-    "description": "Vis de simbleautage équipée",
+    "responsableReparation": "Atelier avionique Cougar",
+    "inactive": 0,
+    "operateur": "Vis Boulonnerie Non Substituables",
+    "description": "Vis de simbleautage equipee",
     "characteristics": [
       {
         "name": "color",
@@ -574,9 +640,12 @@
   {
     "id": 23,
     "title": "vis fixation",
-    "code": "1483583591",
+    "code": 1483583591,
     "type": "vis",
     "picture": "data/img/9.jpg",
+    "responsableReparation": "Atelier verification appareil de levage",
+    "inactive": 0,
+    "operateur": "Vis Boulonnerie Non Substituables",
     "description": "Vis de fixation d'amortisseur complet",
     "characteristics": [
       {
@@ -600,10 +669,13 @@
   {
     "id": 24,
     "title": "vis WILD ZR",
-    "code": "1483583591",
+    "code": 1483583591,
     "type": "vis",
     "picture": "data/img/9.jpg",
-    "description": "Vis pour appareil de contrôle WILD ZR",
+    "responsableReparation": "Atelier radar horizon",
+    "inactive": 0,
+    "operateur": "Vis Boulonnerie Non Substituables",
+    "description": "Vis pour appareil de controle WILD ZR",
     "characteristics": [
       {
         "name": "color",
@@ -626,9 +698,12 @@
   {
     "id": 25,
     "title": "vis à billes et noix",
-    "code": "1483583591",
+    "code": 1483583591,
     "type": "vis",
     "picture": "data/img/9.jpg",
+    "responsableReparation": "Atelier radar horizon",
+    "inactive": 0,
+    "operateur": "Vis Boulonnerie Non Substituables",
     "description": "Vis à billes et noix",
     "characteristics": [
       {
@@ -652,10 +727,13 @@
   {
     "id": 26,
     "title": "boulon entretoise",
-    "code": "1483583591",
+    "code": 1483583591,
     "type": "boulon",
     "picture": "data/img/9.jpg",
-    "description": "boulon entretoise hexagonal chapiteau diamètre 3",
+    "responsableReparation": "Atelier DEM Spartiate",
+    "inactive": 1,
+    "operateur": "Outillage commun",
+    "description": "boulon entretoise hexagonal chapiteau diametre 3",
     "characteristics": [
       {
         "name": "color",
@@ -677,11 +755,14 @@
   },
   {
     "id": 27,
-    "title": "boulon de sécurité",
-    "code": "1483583591",
+    "title": "boulon de securite",
+    "code": 1483583591,
     "type": "boulon",
     "picture": "data/img/9.jpg",
-    "description": "boulon de sécurité argent hexagonal ",
+    "responsableReparation": "Atelier DEM Spartiate",
+    "inactive": 1,
+    "operateur": "Outillage commun",
+    "description": "boulon de securite argent hexagonal ",
     "characteristics": [
       {
         "name": "color",
@@ -704,9 +785,12 @@
   {
     "id": 28,
     "title": "boulon de contrainte",
-    "code": "1483583591",
+    "code": 1483583591,
     "type": "boulon",
     "picture": "data/img/9.jpg",
+    "responsableReparation": "Atelier DEM Spartiate",
+    "inactive": 1,
+    "operateur": "Outillage commun",
     "description": "Boulon de contrainte B M8 X 50 MMN 209",
     "characteristics": [
       {
@@ -730,10 +814,13 @@
   {
     "id": 29,
     "title": "boulon creux",
-    "code": "1483583591",
+    "code": 1483583591,
     "type": "boulon",
     "picture": "data/img/9.jpg",
-    "description": "boulon creux avec bille d'étranglement",
+    "responsableReparation": "Atelier DEM Spartiate",
+    "inactive": 0,
+    "operateur": "Outillage commun",
+    "description": "boulon creux avec bille d'etranglement",
     "characteristics": [
       {
         "name": "color",
@@ -756,9 +843,12 @@
   {
     "id": 30,
     "title": "rondelle fixation",
-    "code": "1483583591",
+    "code": 1483583591,
     "type": "rondelle",
     "picture": "data/img/9.jpg",
+    "responsableReparation": "Atelier structure gazelle",
+    "inactive": 0,
+    "operateur": "Protection DES MATERIELS",
     "description": "Rondelle de vis fixation touche",
     "characteristics": [
       {
@@ -782,9 +872,12 @@
   {
     "id": 31,
     "title": "rondelle d'appui",
-    "code": "1483583591",
+    "code": 1483583591,
     "type": "rondelle",
     "picture": "data/img/9.jpg",
+    "responsableReparation": "Atelier avionique PUMA",
+    "inactive": 0,
+    "operateur": "Protection DES MATERIELS",
     "description": "Rondelle d'appui de la membrane et de la bille",
     "characteristics": [
       {

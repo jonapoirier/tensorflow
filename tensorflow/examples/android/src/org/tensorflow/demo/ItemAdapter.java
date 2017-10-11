@@ -62,6 +62,8 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
         private final TextView textViewItemHeight;
         private final TextView textViewItemMaterial;
 
+        private final TextView textViewRespReparation;
+
         private final ImageView imageViewItem;
         private final CardView cardItemView;
         private final CardView cardQuestionView;
@@ -83,6 +85,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
             //textViewItemWeight = (TextView) v.findViewById(R.id.textViewItemWeight);
             textViewItemHeight = (TextView) v.findViewById(R.id.textViewItemHeight);
             textViewItemMaterial = (TextView) v.findViewById(R.id.textViewItemMaterial);
+            textViewRespReparation = (TextView) v.findViewById(R.id.textViewRespReparation);
             imageViewItem = (ImageView) v.findViewById(R.id.imageViewItem);
             cardItemView = (CardView) v.findViewById(R.id.cardItemView);
             cardQuestionView = (CardView) v.findViewById(R.id.cardQuestionView);
@@ -112,6 +115,9 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
         }
         public TextView getTextViewItemMaterial() {
             return textViewItemMaterial;
+        }
+        public TextView getTextViewRespReparation() {
+            return textViewRespReparation;
         }
         public ImageView getImageViewItem() {
             return imageViewItem;
@@ -303,6 +309,12 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
                         + " - " + mDataSet.get(position).getTitle();
                 textViewTitle.setText(title);
                 descriptionViewTitle.setText(mDataSet.get(position).getMaterial().getDescription());
+
+                TextView textViewRespReparation = (TextView) layout.findViewById(R.id.textViewRespReparation);
+                textViewRespReparation.setText(mDataSet.get(position).getMaterial().getResponsableReparation());
+
+                TextView textViewOperateur = (TextView) layout.findViewById(R.id.textViewOperateur);
+                textViewOperateur.setText(mDataSet.get(position).getMaterial().getOperateur());
 
                 LOGGER.i(mDataSet.get(position).getMaterial().toString());
 
